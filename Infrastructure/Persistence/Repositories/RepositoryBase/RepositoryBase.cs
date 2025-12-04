@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Reflection;
-using YourMentor.Domain.Enums;
-using YourMentor.Domain.Interfaces.RepositoryBase;
+using Domain.Enums;
+using Domain.Interfaces.RepositoryBase;
 
 namespace Infrastructure.Persistence.Repositories.RepositoryBase
 {

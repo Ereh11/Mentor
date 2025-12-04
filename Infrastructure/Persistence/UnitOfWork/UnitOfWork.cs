@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Concurrent;
-using YourMentor.Domain.Interfaces.RepositoryBase;
-using YourMentor.Domain.Interfaces.UnitOfWork;
+using Domain.Interfaces.RepositoryBase;
+using Domain.Interfaces.UnitOfWork;
 using Infrastructure.Persistence.Repositories.RepositoryBase;
 
 namespace Infrastructure.Persistence.UnitOfWork
