@@ -13,6 +13,8 @@ namespace Domain.Configurations
             UpdateProperties(Env);
         }
         public static SysEnvironment Env = SysEnvironment.Local;
+        public static string? Write_DefaultConnection { get; set; }
+        public static string? Read_DefaultConnection { get; set; }
         private static void UpdateProperties(SysEnvironment env)
         {
             switch (env)
@@ -31,8 +33,8 @@ namespace Domain.Configurations
                     break;
                 case SysEnvironment.Local:               
                     Env = SysEnvironment.Local;
-                    //Write_DefaultConnection = "Server=localhost:5432;User Id=postgres;Password=123;Database=sela_local";
-                    //Read_DefaultConnection = "Server=localhost:5432;User Id=postgres;Password=123;Database=sela_local";
+                    Write_DefaultConnection = "Server=.;Database=Mentor;Integrated Security=True;TrustServerCertificate=True;";
+                    Read_DefaultConnection = "Server=.;Database=Mentor;Integrated Security=True;TrustServerCertificate=True;";
                     break;
             }
         }

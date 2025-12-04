@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Domain.Configurations;
+using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.UnitOfWork;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.InfraStructureDI
 {
@@ -9,7 +12,15 @@ namespace Infrastructure.InfraStructureDI
         public static void AddInfraStructureDIRegister(this IServiceCollection services,
             IConfiguration configuration)
         {
+
             services.AddTransient<UnitOfWork>();
+            services.AddDbContext<MentorDbContext>(
+                options => options.UseSqlServer(
+                        Config.Read_DefaultConnection
+                    )
+                );
+
+
         }
     }
 }

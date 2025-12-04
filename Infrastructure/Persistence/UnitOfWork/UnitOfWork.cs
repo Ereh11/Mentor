@@ -3,16 +3,17 @@ using System.Collections.Concurrent;
 using Domain.Interfaces.RepositoryBase;
 using Domain.Interfaces.UnitOfWork;
 using Infrastructure.Persistence.Repositories.RepositoryBase;
+using Infrastructure.Persistence.Context;
 
 namespace Infrastructure.Persistence.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DbContext _context;
+        private readonly MentorDbContext _context;
         private bool _disposed;
         private readonly ConcurrentDictionary<Type, object> _repositories = new();
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(MentorDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
