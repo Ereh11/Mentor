@@ -1,0 +1,6 @@
+@Mentor_HostAddress = http://localhost:5244
+
+GET {{Mentor_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
